@@ -4,5 +4,19 @@ h1 {
     color: $red
 }
 
+.tussi {
+    padding: 20px;
+    background-color: pink;
 
+    button {
+        margin-left: 50px;
+    }
+}
+.megacounter {
+    position: fixed;
+    font-size: 200px;
+    color: blue;
+    bottom: 0;
+    background-color: blue;
 
+}
