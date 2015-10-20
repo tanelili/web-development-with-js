@@ -15,8 +15,8 @@ h1 {
 .megacounter {
     position: fixed;
     font-size: 200px;
-    color: blue;
+    color: #00FF33;
     bottom: 0;
-    background-color: blue;
+    background-color: #FFCCFF;
 
 }
