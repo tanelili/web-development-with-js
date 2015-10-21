@@ -1,41 +1,67 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import api from '../api';
+
+'use strict';
+
 var TodoList = React.createClass({
-  render: function() {
-    var createItem = function(itemText, index) {
-      return <li key={index + itemText}>{itemText}</li>;
+  displayName: 'TodoList',
+
+  render: function render() {
+    var createItem = function createItem(itemText, index) {
+      return React.createElement(
+        'li',
+        { key: index + itemText },
+        itemText
+      );
     };
-    return <ul>{this.props.items.map(createItem)}</ul>;
+    return React.createElement(
+      'ul',
+      null,
+      this.props.items.map(createItem)
+    );
   }
 });
 var TodoApp = React.createClass({
-  getInitialState: function() {
-    return {items: [], text: ''};
+  displayName: 'TodoApp',
+
+  getInitialState: function getInitialState() {
+    return { items: [], text: '' };
   },
-  onChange: function(e) {
-    this.setState({text: e.target.value});
+  onChange: function onChange(e) {
+    this.setState({ text: e.target.value });
   },
-  handleSubmit: function(e) {
+  handleSubmit: function handleSubmit(e) {
     e.preventDefault();
     var nextItems = this.state.items.concat([this.state.text]);
     var nextText = '';
-    this.setState({items: nextItems, text: nextText});
+    this.setState({ items: nextItems, text: nextText });
   },
-  render: function() {
-    return (
-      <div>
-        <h3>TODO</h3>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.onChange} value={this.state.text} />
-          <button>{'Add #' + (this.state.items.length + 1)}</button>
-        </form>
-      </div>
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'h3',
+        null,
+        'TODO'
+      ),
+      React.createElement(TodoList, { items: this.state.items }),
+      React.createElement(
+        'form',
+        { onSubmit: this.handleSubmit },
+        React.createElement('input', { onChange: this.onChange, value: this.state.text }),
+        React.createElement(
+          'button',
+          null,
+          'Add #' + (this.state.items.length + 1)
+        )
+      )
     );
   }
 });
 
-ReactDOM.render(<TodoApp />, mountNode);
+ReactDOM.render(React.createElement(TodoApp, null));
 /*
 const HelloWorldApp = React.createClass({
 
