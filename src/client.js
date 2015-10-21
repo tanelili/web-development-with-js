@@ -1,17 +1,37 @@
 import './client.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
-import { Router, Route, Link, IndexRoute } from 'react-router';
-import HelloWorld from './components/HelloWorld';
-import HelloWorldApp from './components/HelloWorldApp';
-import Counterizer from './components/Counterizer';
-import Greeter from './components/Greeter';
-import Counter from './components/Counter';
-import Index from './components/Index';
-import routes from './components/routes';
 
+var CommentList = React.createClass({
+  render: function() {
+    return (
+      <div className="commentList">
+        Hello, world! I am a CommentList.
+      </div>
+    );
+  }
+});
+
+var CommentForm = React.createClass({
+  render: function() {
+    return (
+      <div className="commentForm">
+        Hello, world! I am a CommentForm.
+      </div>
+    );
+  }
+});
+
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+});
 ReactDOM.render(
-    routes,
-    document.getElementById('app')
+  <CommentBox />,
+  document.getElementById('content')
 );
