@@ -1,0 +1,22 @@
+$red: rgba(255, 0, 0, 1);
+
+body {
+    background-color: rgba(180, 129, 102, 0.6);
+}
+
+h1 {
+    color: $red
+}
+
+.todo {
+
+    color: rgba(0, 255, 0, 1);
+
+    &.done {
+        text-decoration: line-through;
+        background-color: rgba(116,  92,  33,  0.3);
+        background: rgba(116,  92,  33,  0.3);
+        color: rgba(116,  92,  33,  0.3);
+    }
+}
+

@@ -1,0 +1,17 @@
+$back: rgb(247, 242, 211);
+$licolor: rgb(47, 136, 37);
+$inprogress: rgb(216, 99, 99);
+
+body {
+    background-color: $back;
+}
+
+h1 {
+    color: $inprogress;
+}
+
+li {
+
+    color: $licolor;
+}
+

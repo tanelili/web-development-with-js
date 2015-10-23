@@ -8,7 +8,8 @@ const HelloWorldApp = React.createClass({
     getInitialState: function() {
         return {
             count: 0,
-            names: []
+            names: [],
+            dispi: 0
         };
     },
 
